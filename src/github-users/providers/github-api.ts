@@ -23,6 +23,9 @@ export class GithubApi {
           per_page: 5,
         },
       });
+
+      //use lastValueFrom because toPromise is deprecated
+      // this approach works becase we are expecting only one production
       const { data } = await lastValueFrom(resp);
       return data.items;
     } catch (error) {
