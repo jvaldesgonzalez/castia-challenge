@@ -15,4 +15,8 @@ describe('GithubUsersService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  // it('should be a list', () => {
+  //   expect(service.searchUsers('bla')).toBeInstanceOf(Array);
+  // });
 });
