@@ -16,7 +16,7 @@ git clone https://github.com/jvaldesgonzalez/castia-challenge
 cd castia-challenge
 
 yarn install #instalar las dependencias
-yarn run:dev  #ejecutar en modo develop
+yarn start:dev  #ejecutar en modo develop
 ```
 
 ## Testing
