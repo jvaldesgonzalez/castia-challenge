@@ -1,6 +1,6 @@
 ## Castia challenge docs
 
-## Instalacion y ejecucion
+## Instalación y ejecución
 
 ```bash
 git clone https://github.com/jvaldesgonzalez/castia-challenge
@@ -18,6 +18,6 @@ En el challenge se crearon diferentes tests unitaros por cada capa, son los arch
 yarn test
 ```
 
-## Documentacion
+## Documentación
 
-Se utilizo swagger para documentar el api, para visualizar la UI de swagger vaya a http://<DOMAIN>:<PORT>/api-docs
+Se utilizó swagger para documentar el api, para visualizar la UI de swagger vaya a http://<DOMAIN>:<PORT>/api-docs
