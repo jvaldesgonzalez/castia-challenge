@@ -30,3 +30,7 @@ yarn test
 ## Documentación
 
 Se utilizó swagger para documentar el api, para visualizar la UI de swagger vaya a http://<DOMAIN>:<PORT>/api-docs
+
+## Despliegue en Heroku
+
+https://castia.herokuapp.com/api-docs/
