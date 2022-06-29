@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, NotFoundException, Query } from '@nestjs/common';
 import { ApiQuery, ApiTags } from '@nestjs/swagger';
 import { GithubUsersService } from '../services/github-users.service';
 
@@ -10,6 +10,10 @@ export class GithubUsersController {
   @Get('search')
   @ApiQuery({ name: 'q', type: String })
   public async searchUsers(@Query('q') q: string) {
-    return await this.githubService.searchUsers(q);
+    const users = await this.githubService.searchUsers(q);
+    if (users.length === 0) {
+      throw new NotFoundException(`There is no users matching with ${q}`);
+    }
+    return users;
   }
 }
