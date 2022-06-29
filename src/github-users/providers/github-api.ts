@@ -1,6 +1,7 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { lastValueFrom } from 'rxjs';
 
 @Injectable()
 export class GithubApi {
@@ -15,15 +16,14 @@ export class GithubApi {
 
   public async searchUsers(query: string): Promise<any[]> {
     try {
-      const { data } = await this.httpService
-        .get(`${this.API_URL}/search/users`, {
-          params: {
-            q: query,
-            sort: 'repositories',
-            per_page: 5,
-          },
-        })
-        .toPromise();
+      const resp = this.httpService.get(`${this.API_URL}/search/users`, {
+        params: {
+          q: query,
+          sort: 'repositories',
+          per_page: 5,
+        },
+      });
+      const { data } = await lastValueFrom(resp);
       return data.items;
     } catch (error) {
       return [];
@@ -32,7 +32,8 @@ export class GithubApi {
 
   public async getFullUser(url: string): Promise<any> {
     try {
-      const { data } = await this.httpService.get(url).toPromise();
+      const resp = this.httpService.get(url);
+      const { data } = await lastValueFrom(resp);
       return data;
     } catch (error) {
       return null;
