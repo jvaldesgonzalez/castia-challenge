@@ -1,5 +1,14 @@
 ## Castia challenge docs
 
+## Setup
+
+Como variables de entorno se estan utilizando
+
+```env
+PORT=
+GITHUB_URL=
+```
+
 ## Instalación y ejecución
 
 ```bash
